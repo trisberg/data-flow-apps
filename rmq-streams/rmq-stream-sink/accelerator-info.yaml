@@ -1,0 +1,30 @@
+id: eaf60250-9d9e-4661-9b8e-2acaca3acf1c
+name: spring-streaming-app
+timestamp: 2025-09-26T20:08:48.110959Z
+source: VSCODE
+username: risbergt
+fragments:
+  build-wrapper-maven:
+    name: build-wrapper-maven
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples
+      subPath: fragments/build-wrapper-maven
+      ref: tp-10.2
+accelerator:
+  name: spring-streaming-app
+  git:
+    url: https://github.com/vmware-tanzu/application-accelerator-samples
+    subPath: spring-streaming-app
+    ref: tp-10.2
+options:
+  projectName: rmq-stream-sink
+  artifactId: rmq-stream-sink
+  groupId: com.example
+  packageName: com.example.stream
+  objectModelClassName: Foo
+  applicationRole: sink
+  sourceChannel: foo-source
+  resultChannel: foo-result
+  resultChannelGroup: foo-result-group
+  msgBrokerName: foo-broker
+  includeBuildToolWrapper: true
