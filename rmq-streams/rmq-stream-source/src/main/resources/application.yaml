@@ -13,18 +13,16 @@ spring:
         output:
           destination: foo-stream
   # RabbitMQ configurations for streams
-  #     rabbit:
-  #       bindings:
-  #         output:
-  #           producer:
-  #             declare-exchange: false
-  #             producer-type: stream-async
-  #             super-stream: true
-  # rabbitmq:
-  #   listener:
-  #     type: stream
-  #   stream:
-  #     host: localhost
-  #     port: 5552
-  #     username: guest
-  #     password: guest
+      rabbit:
+        bindings:
+          output:
+            producer:
+              declare-exchange: false
+              producer-type: stream-async
+              super-stream: true
+  rabbitmq:
+    stream:
+      host: localhost
+      port: 5552
+      username: guest
+      password: guest
