@@ -9,24 +9,25 @@ spring:
       function:
         bindings:
           storeFoo-in-0: input
-      bindings:
-        input:
-          destination: foo-stream
-          group: foo-stream-group
-          consumer:
-            maxAttempts: 4
-            backOffInitialInterval: 15000
-            backOffMaxInterval: 60000
-  # RabbitMQ configurations for streams
-      rabbit:
-        bindings:
-          input:
-            consumer:
-              container-type: stream
-              super-stream: true
-  rabbitmq:
-    stream:
-      host: localhost
-      port: 5552
-      username: guest
-      password: guest
+      # Spring CLoud Stream configurations for bindings set by Data Flow
+      # bindings:
+      #   input:
+      #     destination: foo-stream.foo-source
+      #     group: foo-stream-group
+      #     consumer:
+      #       maxAttempts: 4
+      #       backOffInitialInterval: 15000
+      #       backOffMaxInterval: 60000
+  # RabbitMQ configurations for RabbitMQ stream API
+  #     rabbit:
+  #       bindings:
+  #         input:
+  #           consumer:
+  #             container-type: stream
+  #             super-stream: true
+  # rabbitmq:
+  #   stream:
+  #     host: localhost
+  #     port: 5552
+  #     username: guest
+  #     password: guest
